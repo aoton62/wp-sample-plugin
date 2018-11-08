@@ -87,7 +87,7 @@ public function admin_init(){
 	*@since   1.0.0
 	*/
 	public function list_page_render () {
-		require_once( plugin_dir_path( __FILE__ ) . 'wp-sample-plugin/includes/wp-sample-plugin-list.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-sample-plugin-list.php' );
 		new Sample_Plugin_List();
 	}
 	/**
@@ -97,7 +97,7 @@ public function admin_init(){
 	*@since   1.0.0
 	*/
 	public function post_page_render () {
-		require_once( plugin_dir_path( __FILE__ ) . 'wp-sample-plugin/includes/wp-sample-plugin-post.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-sample-plugin-post.php' );
 		new Sample_Plugin_Post();
 	}
 	/**
