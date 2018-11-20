@@ -41,7 +41,7 @@ public function create_table(){
 	*@since   1.0.0
 	*/
 public function admin_init(){
-	wp_register_style( 'sample-plugin-style', plugins_url( 'wp-sample-plugin/css/style.css', __FILE__ ), array(), '1.0.0' );
+	wp_register_style( 'sample-plugin-style', plugins_url( 'css/style.css', __FILE__ ), array(), '1.0.0' );
 }
 
 	/**
@@ -79,6 +79,7 @@ public function admin_init(){
 		);
 		add_action( 'admin_print_styles-' . $list_page, array( $this, 'add_style' ) );
 		add_action( 'admin_print_styles-' . $post_page, array( $this, 'add_style' ) );
+		add_action( 'admin_print_scripts-' . $post_page, array( $this, 'add_scripts' ) );
 	}
 
 	/**
@@ -109,5 +110,15 @@ public function admin_init(){
 	*/
 	public function add_style(){
 		wp_enqueue_style( 'sample-plugin-style' );
+	}
+
+	/**
+	*add scripts,
+	*
+	*@version 1.0.0
+	*@since   1.0.0
+	*/
+	public function add_scripts(){
+		wp_enqueue_media();
 	}
 }

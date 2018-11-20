@@ -38,15 +38,15 @@ class Sample_Plugin_Post {
 		$html .= '<tr>';
 		$html .= '<th>画像の URL (必須)</th>';
 		$html .= '<td>';
-		$html .= '<img src="' . plugins_url('../no-image.png', __FILE__ ) . '" width="200">';
-		$html .= '<input type="text" class="large-text" name="sample-image-url">';
-		$html .= '<button class="button">画像を選択</button>';
+		$html .= '<img  id="banner-image-view" src="' . plugins_url('../no-image.png', __FILE__ ) . '" width="200">';
+		$html .= '<input id="banner-image-url" type="text" class="large-text" name="sample-image-url">';
+		$html .= '<button id="media-upload" class="button">画像を選択</button>';
 		$html .= '</td>';
 		$html .= '</tr>';
 
 		$html .= '<tr>';
 		$html .= '<th>画像 ALT属性 (必須)</th>';
-		$html .= '<td><input type="text" class="regular-text" name="sample-image-alt"><p class="description">alt属性のテキストを入力します。</p></td>';
+		$html .= '<td><input id="banner-image-alt" type="text" class="regular-text" name="sample-image-alt"><p class="description">alt属性のテキストを入力します。</p></td>';
 		$html .= '</tr>';
 
 		$html .= '<tr>';
@@ -113,5 +113,7 @@ class Sample_Plugin_Post {
 
 		$html .= '</div>';
 		echo $html;
+
+		require_once( plugin_dir_path( __FILE__ ) . 'wp-sample-plugin-upload.php' );
 	}
 }
