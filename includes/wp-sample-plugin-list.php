@@ -26,12 +26,14 @@ class Sample_Plugin_List {
 	*/
 
 	private function page_render( $db ) {
+		$post_url = admin_url() . 'admin.php?page=wp-sample-plugin/includes/wp-sample-plugin-post.php';
+
 		$html  = '<div class="wrap">';
 		$html .= '<h1 class="wp-heading-inline">サンプル一覧</h1>';
 		$html .= '<a href="" class="page-title-action">新規作成</a>';
 
 		$html .= '<table>';
-		$html .= '<tr><th>画像</th><th>画像ALT属性</th><th>表示方法</th><th>絞り込み</th></tr>';
+		$html .= '<tr><th>画像</th><th>画像ALT属性</th><th>表示方法</th><th>絞り込み</th><th>&nbsp;</th></tr>';
 
 		$results = $db->get_list_options();
 
@@ -42,6 +44,7 @@ class Sample_Plugin_List {
 				$html .= '<td>' . $row->image_alt . '</td>';
 				$html .= '<td>' . $row->how_display . '</td>';
 				$html .= '<td>' . $row->filter_category . '</td>';
+				$html .= '<td><a href="' . $post_url . '&id=' . $row->id . '">編集</a></td>';
 				$html .= '</tr>';
 			}
 		}else{

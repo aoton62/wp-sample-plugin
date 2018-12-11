@@ -55,6 +55,27 @@ private $table_name;
 			dbDelta( $query );
 		}
 	}
+	/**
+		* Get id data.
+		*
+		* @version 1.0.0
+		* @since 1.0.0
+		* @param integer $id
+		* @return array
+		*/
+		public function get_option ( $id ) {
+			global $wpdb;
+			$query = 'SELECT * FROM ' . $this->table_name . ' WHERE id = %d';
+			$data     = array( $id );
+			$prepared = $wpdb->prepare( $query, $data );
+			//一つだけ取得
+			return $wpdb->get_row( $prepared );
+		}
+
+
+
+
+
 
 	/**
 	*Select data.
