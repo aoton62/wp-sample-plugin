@@ -74,7 +74,7 @@ public function admin_init(){
 			'サンプル登録',
 			'サンプル登録',
 			'manage_options',
-			plugin_dir_path( __FILE__ ) . 'wp-sample-plugin/includes/wp-sample-plugin-post.php',
+			plugin_dir_path( __FILE__ ) . 'includes/wp-sample-plugin-post.php',
 			array( $this, 'post_page_render' ),
 			'dashicons-feedback'
 		);
