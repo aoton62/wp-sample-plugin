@@ -69,7 +69,7 @@ private $table_name;
 			$data     = array( $id );
 			$prepared = $wpdb->prepare( $query, $data );
 			//一つだけ取得
-			return $wpdb->get_row( $prepared );
+			return (array) $wpdb->get_row( $prepared );
 		}
 
 
@@ -120,7 +120,7 @@ private $table_name;
 			'%d',
 			'%s',
 			'%s',
-			'%d',
+			'%s',
 			'%d',
 			'%d',
 			'%s',
