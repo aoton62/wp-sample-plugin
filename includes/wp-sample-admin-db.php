@@ -73,10 +73,6 @@ private $table_name;
 		}
 
 
-
-
-
-
 	/**
 	*Select data.
 	*
